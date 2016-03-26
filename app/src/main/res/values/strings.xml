@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Material Desing Tabs</string>
+    <string name="page1">Page 1</string>
+    <string name="page2">Page 2</string>
+    <string name="page3">Page 3</string>
+    <string name="page4">Page 4</string>
+    <string name="action_about">About</string>
+</resources>
