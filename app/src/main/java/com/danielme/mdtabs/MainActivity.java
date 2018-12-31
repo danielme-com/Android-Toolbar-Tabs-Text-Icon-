@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
     tabLayout = findViewById(R.id.tabs);
     tabLayout.setTabMode(TabLayout.MODE_FIXED);
     tabLayout.setupWithViewPager(viewPager);
-    tabLayout.getTabAt(0).setIcon(R.mipmap.tab1);
-    tabLayout.getTabAt(1).setIcon(R.mipmap.tab2);
-    tabLayout.getTabAt(2).setIcon(R.mipmap.tab3);
-    tabLayout.getTabAt(3).setIcon(R.mipmap.tab4);
+    tabLayout.getTabAt(0).setIcon(R.drawable.tab1);
+    tabLayout.getTabAt(1).setIcon(R.drawable.tab2);
+    tabLayout.getTabAt(2).setIcon(R.drawable.tab3);
+    tabLayout.getTabAt(3).setIcon(R.drawable.tab4);
 
     selectIcon(0);
     viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
