@@ -8,7 +8,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+    ViewPager viewPager = findViewById(R.id.viewpager);
     viewPager.setAdapter(new MainPageAdapter());
 
-    tabLayout = (TabLayout) findViewById(R.id.tabs);
+    tabLayout = findViewById(R.id.tabs);
     tabLayout.setTabMode(TabLayout.MODE_FIXED);
     tabLayout.setupWithViewPager(viewPager);
     tabLayout.getTabAt(0).setIcon(R.mipmap.tab1);
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     switch (item.getItemId()) {
       case R.id.action_about:
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://danielme" +
-            ".com/2016/03/26/diseno-android-tutorial-pestanas-con-material-design")));
+                ".com/2016/03/26/diseno-android-tutorial-pestanas-con-material-design")));
         break;
       default:
         return super.onOptionsItemSelected(item);
@@ -126,21 +125,21 @@ public class MainActivity extends AppCompatActivity {
         case 0:
           if (page1 == null) {
             page1 = (LinearLayout) LayoutInflater.from(MainActivity.this).inflate(R.layout
-                .page_one, collection, false);
+                    .page_one, collection, false);
           }
           page = page1;
           break;
         case 1:
           if (page2 == null) {
             page2 = (LinearLayout) LayoutInflater.from(MainActivity.this).inflate(R.layout
-                .page_two, collection, false);
+                    .page_two, collection, false);
           }
           page = page2;
           break;
         case 2:
           if (page3 == null) {
             page3 = (ListView) LayoutInflater.from(MainActivity.this).inflate(R.layout
-                .page_three, collection, false);
+                    .page_three, collection, false);
             initListView();
           }
           page = page3;
@@ -148,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         default:
           if (page4 == null) {
             page4 = (LinearLayout) LayoutInflater.from(MainActivity.this).inflate(R.layout
-                .page_four, collection, false);
+                    .page_four, collection, false);
           }
           page = page4;
           break;
@@ -175,13 +174,13 @@ public class MainActivity extends AppCompatActivity {
       for (int i = 0; i < 50; i++) {
         items[i] = "Item " + i;
       }
-      page3.setAdapter(new ArrayAdapter<String>(MainActivity.this, R.layout.textview, items));
+      page3.setAdapter(new ArrayAdapter<>(MainActivity.this, R.layout.textview, items));
       page3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
           Toast.makeText(MainActivity.this, (String) parent.getItemAtPosition(position), Toast
-              .LENGTH_SHORT).show();
+                  .LENGTH_SHORT).show();
         }
       });
 
